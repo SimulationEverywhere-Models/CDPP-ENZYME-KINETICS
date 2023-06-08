@@ -1,0 +1,38 @@
+This file contains one simulation of the simple enzyme kinetics model
+
+  E + S <-> ES -> EP -> E + P
+
+Here an enzyme (E) and a subsrate (S) interact. The substrate may
+be converted to a product (P) or the enzyme and substrate may
+separate. Products are stable as are enzymes.
+
+The system starts with 20 E and 50 S. The starting configuration
+was created separately and is stored in SimpleEnzymeKinetics20by20.val.
+
+Cells in the first layer (layer 0) can have 14 states:
+
+-1	an error has occurred, this is the default state assigned if all 
+        other rules have failed
+0	fluid (water) that provides no resistance to particle motion; 
+        consider it as empty space
+2#	enzyme
+3#	substrate
+4#	product
+
+where # can be 
+
+1	moving from the east
+2	moving from the north
+3	moving from the west
+4	moving from the south
+
+Cells in the second layer are random numbers drawn from U(0,1). They are
+used to make decisions about what occurs when particles interact.
+
+When running the simulation you will see enzymes (green) and substrates
+(orange) moving randomly. Some collisions between substrates and enzymes
+will produce products (yellow). As time passes the amount of substrate
+decreases and the amount of product increases. The number of enzymes
+is constant.
+
+
